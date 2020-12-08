@@ -1,7 +1,9 @@
-
+// constcorsAttr = new EnableCorsAttribute("*", "*", "*");
+ 
  export const fetchPhotos = (cityName) => {
    // debugger;
    let script = document.createElement('script');
+   script.id="wikiAPI"
     script.src = `https://api.flickr.com/services/feeds/photos_public.gne?format=json&tags=${cityName}%20skyline&tagmode=all`;
    // script.src = `https://api.flickr.com/services/feeds/photos_public.gne?format=json&&per_page=3&tags=${document.getElementById("search").value}skyline`;
    document.querySelector('head').appendChild(script);
@@ -38,14 +40,38 @@
 
 
 
-   let image = "";
+   let image = "<h3>FLICKR FEED</h3>";
    data.items.forEach((photo) => {
       // debugger 
       let url = photo.media.m
-      let finalUrl = `${url.slice(0, url.length - 5)}c.jpg`
+      let finalUrl = `${url.slice(0, url.length - 5)}b.jpg`
       // debugger;
-      image += `<div class="photo-container"> <img class="photo" src=\"${finalUrl}"\"/>  </div>`;
+      image += `<a href=${finalUrl}> <div class="photo-container"> <img class="photo" src=\"${finalUrl}"\"/>  </div> </a>` ;
    })
    // debugger;
    document.getElementById("imgs").innerHTML = image;
+}
+
+
+export const wikiAPI = location => {
+   debugger
+   let loc = location.replace(" ", "_").toLowerCase()
+   let script = document.createElement('script');
+   if (location.toLowerCase() === "new york")
+   {script.src = `https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=nyc`}
+   else if (location.toLowerCase() === "phoenix")
+   { script.src = `https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=Phoenix,_Arizona` }
+   else 
+   { script.src = `https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=${loc}` }
+   debugger;
+   return $.ajax({
+       url: script.src, dataType: "jsonp",
+   }).then(data => {
+      debugger;
+
+      document.getElementById("description").innerHTML = Object.values(data.query.pages)[0].extract
+     debugger;
+   })
+   debugger;
+   document.querySelector('head').appendChild(script);
 }

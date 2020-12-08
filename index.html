@@ -9,14 +9,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
     <title>Destinations</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
-</script>
+
 <body> 
     <script src="./dist/main.js"></script>
-    <nav> <h3>Links to my personal</h3> <h2>DESTINATIONS</h2> <h3>About</h3></nav>
+    <nav> <ul>
+        <img class="logo" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="">
+        <img class="logo1" src="https://cdn2.iconfinder.com/data/icons/simple-social-media-shadow/512/14-512.png" alt="">
+        <!-- <img class="logo" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt=""> -->
+        </ul>
+    <h2>DESTINATIONS</h2> <h3>About</h3></nav>
     <div class="main-content">
         <div class="side-panel">
-            <div class="description"></div>
+            <!-- <div id="description"></div> -->
             <div class="list-of-cities">
                 <ul> CITIES
                     <li onclick={changeCity(this)} title="c2_u8UqG2c4">Atlanta</li>
@@ -39,14 +45,21 @@
                 </ul>
             </div>
         </div>
-        <!-- <div class="vid-images"> -->
+        <div class="middle-content">
             <div id="vid">
                 WELCOME TO DESTINATIONS
             </div>
+            <div id= "toggler" 
+            onclick={toggleRead(this)}>
+            READ MORE
+            </div>
+        <div id="description"></div>
+            
+        </div>
+    
             <div id="imgs">FROM FLICKR
                 <div class="photo-container"></div>
             </div>
-        <!-- </div> -->
         
     </div>
     <script src="./dist/main.js"></script>

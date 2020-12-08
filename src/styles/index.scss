@@ -4,6 +4,16 @@ nav{
    margin-left: -70px;
 }
 
+.logo{
+   height: 25px;
+   width: auto;
+}
+.logo1{
+   height: 50px;
+   width: auto;
+   position: relative;
+   top:12px;
+}
 h2{
    margin-left: -50px;
 }
@@ -38,13 +48,46 @@ li:hover{
    background-color: darkgray;
    justify-content: center;
 }
-
+.middle-content{
+  width: 60%;
+}
 .vid-images{
    display: flex;
 }
 
+#description{
+   width: inherit;
+   margin-left: 21%;
+   margin-top: 50px;
+   height: 290px;
+   overflow: hidden;  
+}
+#description2{
+   width: inherit;
+   margin-left: 21%;
+   margin-top: 50px;
+   height: 290px;
+}
+#toggler{
+   width: inherit;
+   display: inline;
+   margin-left: 42%;
+
+   background-color: rgb(133, 171, 68);
+   margin-top: 25px;
+   padding: 10px;
+   position: relative;
+   top: 25px;
+}
+
+#toggler:hover{
+   background-color: darkolivegreen;
+
+}
+
+
 #vid{
-   margin: 10px 0;
+   text-align: center;
 }
 .photo-container{
     height: 150px; 
@@ -58,4 +101,8 @@ li:hover{
 img{
    height: 150px;
    width: 250px;
+}
+
+img:hover{
+   filter: invert(1);
 }
