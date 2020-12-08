@@ -34,6 +34,11 @@ li{
    border: 1px solid gray;
 }
 
+li:hover{
+   background-color: darkgray;
+   justify-content: center;
+}
+
 .vid-images{
    display: flex;
 }

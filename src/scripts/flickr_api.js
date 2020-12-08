@@ -8,6 +8,10 @@
 }
  export const jsonFlickrFeed = data => {
    debugger;
+    if (data.title.includes("boston"))
+       data.items = data.items.slice(6, 15);
+   if (data.title.includes("chicago"))
+      data.items = data.items.slice(8, 13);
    if (data.title.includes("dallas"))
    data.items = data.items.slice(8, 16);
    if (data.title.includes("denver"))
