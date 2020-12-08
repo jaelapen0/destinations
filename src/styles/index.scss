@@ -1,0 +1,56 @@
+nav{
+   display: flex;
+   justify-content: space-around;
+   margin-left: -70px;
+}
+
+h2{
+   margin-left: -50px;
+}
+.main-content{
+ border-right: 2px solid green;
+ display: flex;
+ justify-content: space-around;
+}
+
+.vid{
+   border: 1px solid black;
+}
+
+body{
+   color: white;
+   background-color: black;
+   font-family: 'Montserrat', sans-serif;
+}
+
+ul{
+   
+   
+}
+li{
+   text-transform: uppercase;
+   list-style: none;
+   padding: 10px;
+   border: 1px solid gray;
+}
+
+.vid-images{
+   display: flex;
+}
+
+#vid{
+   margin: 10px 0;
+}
+.photo-container{
+    height: 150px; 
+    width: 250px; 
+   
+    overflow: hidden;
+    margin: 10px 10px 10px 0;
+
+}
+
+img{
+   height: 150px;
+   width: 250px;
+}
