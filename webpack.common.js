@@ -22,7 +22,7 @@ module: {
         loader: "babel-loader",
         options: {
             presets: ["@babel/preset-env"],
-            plugins: ["@babel/plugin-proposal-optional-chaining"],
+                        plugins: ["@babel/plugin-proposal-optional-chaining", '@babel/transform-runtime'],
             exclude: /node_modules/,
         }, // if we were using React.js, we would include "react"
         },

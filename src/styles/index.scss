@@ -1,26 +1,77 @@
 nav{
    display: flex;
+   position: fixed;
    justify-content: space-around;
-   margin-left: -70px;
+   top: -5px;
+   color: white;
+   background-color: black;
+   width: 100%;
+   height: 40px;
+   
+   margin-left: -10px;;
+   margin-right: -10px;
+   z-index: 2;
+   padding-bottom: 10px;
+   box-shadow: 1px 1px 1px 1px silver;
 }
 
+.n3av{
+   display: flex;
+   justify-content: space-around;
+   margin-left: -70px;
+   position: fixed;
+   top: 0px
+}
+
+.header{
+   position: relative;
+   justify-content: center;
+   margin-left: 45%;
+}
+.about-nav{
+   display: flex;
+   position: relative;
+   bottom: 10px;
+   margin-left: 33%; 
+   margin-right: 200px;
+}
+
+.about{
+   position: relative;
+   bottom: 5px;
+   margin-right: 5px;
+}
 .logo{
    height: 25px;
    width: auto;
+ position: relative;
+   top:13px;
+   filter: invert(1);
+   margin-left: 5px;
+}
+.logo:hover{
+   filter: invert(0);
 }
 .logo1{
    height: 50px;
    width: auto;
-   position: relative;
-   top:12px;
+    position: relative;
+   top:1px;
+  
 }
 h2{
    margin-left: -50px;
 }
+
+.side-panel{
+   position: relative;
+   top: 10px;
+}
 .main-content{
- border-right: 2px solid green;
  display: flex;
  justify-content: space-around;
+   position: relative;
+   top: 50px;
 }
 
 .vid{
@@ -33,15 +84,18 @@ body{
    font-family: 'Montserrat', sans-serif;
 }
 
-ul{
-   
-   
+ul p{
+   margin: 10px 0;
+   margin-left: 61px;
+   font-size: 25px;
+
 }
 li{
    text-transform: uppercase;
    list-style: none;
    padding: 10px;
    border: 1px solid gray;
+   margin-left: 30px;
 }
 
 li:hover{
@@ -50,6 +104,7 @@ li:hover{
 }
 .middle-content{
   width: 60%;
+   margin-top: 20px;
 }
 .vid-images{
    display: flex;
@@ -89,6 +144,10 @@ li:hover{
 #vid{
    text-align: center;
 }
+
+#imgs{
+   margin-right: 60px;
+}
 .photo-container{
     height: 150px; 
     width: 250px; 
@@ -105,4 +164,14 @@ img{
 
 img:hover{
    filter: invert(1);
+}
+
+#image{
+   width: auto;
+   height: auto;
+}
+
+#ayo2{
+  width: auto;
+  height: auto;
 }
