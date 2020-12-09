@@ -23,7 +23,7 @@
     <script src="./dist/main.js"></script>
     <nav>
     <ul></ul>
-    <h2 class="header">DESTINATIONS</h2> 
+    <h1 class="header">DESTINATIONS</h1> 
         <ul class="about-nav">
             <h3 class="about">About</h3>
             <a href="https://github.com/jaelapen0/destinations/wiki"><img class="logo"
@@ -59,34 +59,40 @@
                 </ul>
             </div>
         </div>
+
+
         <div class="middle-content">
             <div id="vid">
                 WELCOME TO DESTINATIONS
             </div>
-            <div >
+            <div>
+                <button onclick={startCam()} id="togglePhotoBooth"> 
+                    START POST CARD BOOTH
+                </button>
+            </div>
+            <div  id='photobooth' hidden>
                 
                 <video id="webcam" autoplay playsinline width="640" height="480"></video>
-                <canvas id="canvas" class="d-none"></canvas>
                 <audio id="snapSound" src="audio/snap.wav" preload="auto"></audio>
                 <div id="download"></div>
-                <button onclick={window.snap()}>click</button>
-            <div id="video"></div>
-            <div >
-                <img id="image" src="file://../../../Desktop/Screenshots/jae_song.png" alt="">
+                <button hidden onclick={window.snap()}>click</button>
             </div>
+            <div id="postcard" hidden>
+                <button class="converter" onclick={webweb()}> CAPTURE Postcard</button>
+                <div id="ayo">
 
-            <div id="ayo"></div>
-
-            <canvas id="canvas2"></canvas>
-            <button onclick={webweb()}> Webcam</button>
+                    <canvas id="canvas2"></canvas>
+                </div>
             </div>
             <div id= "toggler" 
             onclick={toggleRead(this)}>
             READ MORE
             </div>
-        <div id="description"></div>
-            
+            <div id="description"></div>
         </div>
+
+
+
         <div id="imgs">FROM FLICKR
             <div class="photo-container"></div>
         </div>

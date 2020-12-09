@@ -20,8 +20,6 @@ window.changeCity = (e) => {
     fetchPhotos(e.innerText)
     wikiAPI(e.innerText)
     changeVideo(e.title)
-
-
 }
 
 window.onload = () => {
@@ -30,76 +28,36 @@ window.onload = () => {
    changeVideo("5V23-xQknDw")
 };
 
-async function webweb() {
-   const imageElement = document.getElementById('ayo2');
 
-   const net = await bodyPix.load({
-      architecture: 'ResNet50'
-   });
-   const segmentation = await net.segmentPerson(imageElement,{
-      flipHorizontal: false,
-      internalResolution: 'medium',
-      segmentationThreshold: 0.5
-   });
-   // net.segmentPerson(webcamElement, {
-   //    flipHorizontal: true,
-   //    internalResolution: 'medium',
-   //    segmentationThreshold: 0.5
-   // })
-   //    .then(personSegmentation => {
-   //       if (personSegmentation != null) {
-   //          drawBody(personSegmentation);
-   //       }
-   //    });
-   // const canvasPerson = document.getElementById("canvas2");
-   // let contextPerson = canvasPerson.getContext('2d');
-   // const image = document.getElementById('ayo2');
-   // function drawBody(personSegmentation) {
-   //    contextPerson.drawImage(image, 0, 0, 640, 480);
-   //    let imageData = contextPerson.getImageData(0, 0, 640, 480);
-   //    debugger;
-   //    let pixel = imageData.data;
-   //    for (let p = 0; p < pixel.length; p += 4) {
-   //       if (personSegmentation.data[p / 4] == 0) {
-   //          pixel[p + 3] = 0;
-   //       }
-   //    }
-   //    contextPerson.imageSmoothingEnabled = true;
-   //    contextPerson.putImageData(imageData, 0, 0);
-   // }
-
-
-   const maskBackground = true;
-   // Convert the personSegmentation into a mask to darken the background.
-   const backgroundDarkeningMask = bodyPix.toMask(segmentation, maskBackground);
-
-   const opacity = 1;
-   const maskBlurAmount = 0;
-
-   const canvas = document.getElementById('canvas2');
-   // draw the mask onto the image on a canvas.  With opacity set to 0.7 this will darken the background.
-   debugger;
-   bodyPix.drawMask(
-      canvas, imageElement, backgroundDarkeningMask, opacity, maskBlurAmount);
-   document.getElementById("ayo").remove()
       
-}
-
+      
 const webcamElement = document.getElementById('webcam');
 const canvasElement = document.getElementById('canvas');
 const snapSoundElement = document.getElementById('snapSound');
 const webcam = new Webcam(webcamElement, 'user', canvasElement, snapSoundElement);
 
+export const startCam = ()=> {
 
-webcam.start()
-   .then(result => {
-      console.log("webcam started");
-   })
-   .catch(err => {
-      console.log(err);
-   });
+   // document.getElementById("photobooth").id = "photobooth-enabled";
+   document.getElementById("photobooth").removeAttribute("hidden")
+   document.getElementById("webcam").id = "webcam-enabled"
+   document.getElementById("postcard").removeAttribute("hidden")
+   
+   webcam.start()
+      .then(result => {
+         console.log("webcam started");
+      })
+      .catch(err => {
+         alert(err);
+      });
 
- const snap = () =>{ 
+ 
+} 
+
+
+
+
+ export const snap = () =>{ 
 
     let picture = webcam.snap();
    //  document.querySelector('#canvas').href = picture;
@@ -109,7 +67,62 @@ webcam.start()
     document.querySelector('#canvas').remove()
  }
 
- window.snap = snap;
 
-
+window.startCam = startCam;
+window.snap = snap;
 window.webweb = webweb;;
+
+async function webweb() {
+   const imageElement = document.getElementById('ayo2');
+
+   const net = await bodyPix.load({
+      architecture: 'ResNet50'
+   });
+
+
+
+   net.segmentPerson(webcamElement, {
+      flipHorizontal: true,
+      internalResolution: 'medium',
+      segmentationThreshold: 0.7
+   })
+      .then(personSegmentation => {
+         if (personSegmentation != null) {
+            drawBody(personSegmentation);
+         }
+      });
+
+}
+
+
+const drawBody = (segmentation) => {
+   const canvas = document.getElementById('canvas2');
+   const canvasPerson = document.getElementById("canvas2");
+   const contextPerson = canvasPerson.getContext('2d');
+ 
+   canvas.width = 480;
+      canvas.height = 640;
+      let ctx = canvas.getContext('2d');
+      ctx.drawImage(webcamElement, 0, 0);
+      let imageData = ctx.getImageData(0, 0, webcamElement.width, webcamElement.height);
+
+      let pixel = imageData.data;
+      for (let p = 0; p < pixel.length; p += 4) {
+         if (segmentation.data[p / 4] == 0) {
+            pixel[p + 3] = 0;
+         }
+      }
+      ctx.imageSmoothingEnabled = true;
+      ctx.putImageData(imageData, 0, 0);
+
+      let imageObject = new Image();
+      imageObject.onload = function () {
+         contextPerson.clearRect(0, 0, canvasPerson.width, canvasPerson.height);
+         contextPerson.imageSmoothingEnabled = true;
+         contextPerson.drawImage(imageObject, 0, 0, canvasPerson.width, canvasPerson.height);
+      }
+      imageObject.src = canvas.toDataURL();
+
+}
+
+
