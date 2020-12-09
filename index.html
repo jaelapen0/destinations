@@ -10,35 +10,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
     <title>Destinations</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- Load TensorFlow.js -->
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.13.3"></script>
-    <!-- Load BodyPix -->
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/body-pix"></script>
-<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"> </script>
-    </script>
-
 </head>
 
 <body> 
     <script src="./dist/main.js"></script>
-    <nav>
-    <ul></ul>
-    <h2 class="header">DESTINATIONS</h2> 
-        <ul class="about-nav">
-            <h3 class="about">About</h3>
-            <a href="https://github.com/jaelapen0/destinations/wiki"><img class="logo"
-                    src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt=""></a>
-            <a href="https://www.linkedin.com/in/jae-song-58771b82/"><img class="logo1"
-                    src="https://cdn2.iconfinder.com/data/icons/simple-social-media-shadow/512/14-512.png" alt=""></a>
-            <!-- <img class="logo" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt=""> -->
+    <nav> <ul>
+        <img class="logo" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="">
+        <img class="logo1" src="https://cdn2.iconfinder.com/data/icons/simple-social-media-shadow/512/14-512.png" alt="">
+        <!-- <img class="logo" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt=""> -->
         </ul>
-        
-    </nav>
+    <h2>DESTINATIONS</h2> <h3>About</h3></nav>
     <div class="main-content">
         <div class="side-panel">
             <!-- <div id="description"></div> -->
             <div class="list-of-cities">
-                <ul>  <p>CITIES</p> 
+                <ul> CITIES
                     <li onclick={changeCity(this)} title="c2_u8UqG2c4">Atlanta</li>
                     <li onclick={changeCity(this)} title="6Wk8CtKYzOI">Boston</li>
                     <li onclick={changeCity(this)} title="3KrQUUifmFA">Chicago</li>
@@ -63,23 +49,6 @@
             <div id="vid">
                 WELCOME TO DESTINATIONS
             </div>
-            <div >
-                
-                <video id="webcam" autoplay playsinline width="640" height="480"></video>
-                <canvas id="canvas" class="d-none"></canvas>
-                <audio id="snapSound" src="audio/snap.wav" preload="auto"></audio>
-                <div id="download"></div>
-                <button onclick={window.snap()}>click</button>
-            <div id="video"></div>
-            <div >
-                <img id="image" src="file://../../../Desktop/Screenshots/jae_song.png" alt="">
-            </div>
-
-            <div id="ayo"></div>
-
-            <canvas id="canvas2"></canvas>
-            <button onclick={webweb()}> Webcam</button>
-            </div>
             <div id= "toggler" 
             onclick={toggleRead(this)}>
             READ MORE
@@ -87,9 +56,10 @@
         <div id="description"></div>
             
         </div>
-        <div id="imgs">FROM FLICKR
-            <div class="photo-container"></div>
-        </div>
+    
+            <div id="imgs">FROM FLICKR
+                <div class="photo-container"></div>
+            </div>
         
     </div>
     <script src="./dist/main.js"></script>
