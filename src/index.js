@@ -1,6 +1,4 @@
-// src/index.js
 import "./styles/index.scss";
-// require("./styles/index.scss")
 import {fetchPhotos, jsonFlickrFeed, wikiAPI} from "./scripts/flickr_api.js"
 import {changeVideo} from "./scripts/video"
 import {toggleRead} from "./scripts/util"
@@ -28,7 +26,6 @@ window.onload = () => {
    changeVideo("5V23-xQknDw")
 };
 
-
       
       
 const webcamElement = document.getElementById('webcam');
@@ -36,13 +33,16 @@ const canvasElement = document.getElementById('canvas');
 const snapSoundElement = document.getElementById('snapSound');
 const webcam = new Webcam(webcamElement, 'user', canvasElement, snapSoundElement);
 
-export const startCam = ()=> {
-
+export const startCam = (e)=> {
+   debugger;
    // document.getElementById("photobooth").id = "photobooth-enabled";
+   if (e.innerText.includes("START")){
    document.getElementById("photobooth").removeAttribute("hidden")
    document.getElementById("webcam").id = "webcam-enabled"
    document.getElementById("postcard").removeAttribute("hidden")
-   
+   document.getElementById("converter").removeAttribute("hidden")
+
+      e.innerText= ("STOP POST CARD BOOTH")
    webcam.start()
       .then(result => {
          console.log("webcam started");
@@ -51,10 +51,16 @@ export const startCam = ()=> {
          alert(err);
       });
 
- 
+   }
+   else{
+      document.getElementById("photobooth").setAttribute("hidden", true)
+      document.getElementById("webcam-enabled").id = "webcam"
+      document.getElementById("postcard").setAttribute("hidden", true)
+      document.getElementById("converter").setAttribute("hidden", true)
+      e.innerText = ("START POST CARD BOOTH")
+      webcam.stop()
+   }
 } 
-
-
 
 
  export const snap = () =>{ 
@@ -70,16 +76,15 @@ export const startCam = ()=> {
 
 window.startCam = startCam;
 window.snap = snap;
-window.webweb = webweb;;
+window.makeCapture = makeCapture;;
 
-async function webweb() {
+async function makeCapture() {
+   document.getElementById("converter").innerHTML = 
+   `Loading <i class="fa fa-cog fa-spin" style="font-size:20px"></i>`
    const imageElement = document.getElementById('ayo2');
-
    const net = await bodyPix.load({
       architecture: 'ResNet50'
    });
-
-
 
    net.segmentPerson(webcamElement, {
       flipHorizontal: true,
@@ -88,14 +93,16 @@ async function webweb() {
    })
       .then(personSegmentation => {
          if (personSegmentation != null) {
-            drawBody(personSegmentation);
+            document.getElementById("converter").innerHTML =
+            `CAPTURE Postcard`
+            drawPerson(personSegmentation);
          }
       });
 
 }
 
 
-const drawBody = (segmentation) => {
+const drawPerson = (segmentation) => {
    const canvas = document.getElementById('canvas2');
    const canvasPerson = document.getElementById("canvas2");
    const contextPerson = canvasPerson.getContext('2d');

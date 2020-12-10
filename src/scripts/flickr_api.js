@@ -46,7 +46,7 @@
       let url = photo.media.m
       let finalUrl = `${url.slice(0, url.length - 5)}b.jpg`
       // debugger;
-      image += `<a href=${finalUrl}> <div class="photo-container"> <img class="photo" src=\"${finalUrl}"\"/>  </div> </a>` ;
+      image += `<a href=${finalUrl} target="_blank"> <div class="photo-container"> <img class="photo" src=\"${finalUrl}"\"/>  </div> </a>` ;
    })
    // debugger;
    document.getElementById("imgs").innerHTML = image;

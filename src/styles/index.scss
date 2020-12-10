@@ -22,20 +22,28 @@ nav3{
 }
 .about-nav{
    display: flex;
+   text-align: center;
+   margin: 10px 0 auto;
+   
 }
 
 
 .about{
    margin-right: 5px;
-   font-size: larger;
+   font-size: 19px;
+   position: relative;
+   left: 60px;
+   bottom: 3px;   
+   
 }
 .logo{
    height: 25px;
    width: auto;
       position: relative;
+      left: 61px;
    top:13px;
    margin: 0 5px;
-   margin-left: 10px;
+   margin-left: 5px;
    
 }
 .logo1{
@@ -43,18 +51,33 @@ nav3{
    width: auto;
    position: relative;
    top:2px;
+   left: 55px;
 }
 h2{
    margin-left: -50px;
 }
+
+.cities{
+   margin: 15px auto;
+   text-align: center;
+}
+
+.citiesList{
+   width: 300px;
+   box-shadow: 2px 2px 2px 2px gray ;
+}
+
+.citiesList li{
+   width: 300px;
+}
 .main-content{
  display: flex;
  justify-content: space-around;
- margin-top: 100px;
+ margin-top: 70px;
 }
 
 #imgs{
-   margin-right: 30px;
+   margin-right: 50px;
 }
 
 .vid{
@@ -83,35 +106,38 @@ li:hover{
    justify-content: center;
 }
 .middle-content{
-  width: 60%;
+ margin-top: 55px;
 }
 .vid-images{
    display: flex;
 }
 
 #description{
-   width: inherit;
-   margin-left: 21%;
-   margin-top: 50px;
+   text-align: center;
+   
    height: 290px;
    overflow: hidden;  
+   width: 70%;
+   margin:0 auto;
+   margin-top: 50px;
+   
 }
 #description2{
-   width: inherit;
-   margin-left: 21%;
+   text-align: center;
+   width: 70%;
+   margin:0 auto;
    margin-top: 50px;
-   height: 290px;
 }
 #toggler{
-   width: inherit;
-   display: inline;
-   margin-left: 42%;
-
+   text-align: center;
+   margin: 0 auto;
+   width: 150px;
    background-color: rgb(133, 171, 68);
    margin-top: 25px;
    padding: 10px;
    position: relative;
    top: 25px;
+   border-radius: 5px;
 }
 
 #toggler:hover{
@@ -148,8 +174,7 @@ img:hover{
 #ayo{
    width: 420px;
    overflow: hidden;
-   border: 5px dotted gray;
-   margin-left: 50px;
+   margin-left: 130px;
 }
 
 #ayo2{
@@ -162,7 +187,6 @@ img:hover{
 #ayo3{
   width: 640px;
    height: 480px;
- background-image: url('');
  background-blend-mode: screen;
   background-color: transparent
 }
@@ -174,24 +198,27 @@ img:hover{
 
 #togglePhotoBooth{
    
-   display: inline;
-   margin-left: 37%;
-   margin-bottom: 50px;
-   background-color: rgb(133, 171, 68);
+   text-align: center;
+   margin: 0 auto;
+   width: 230px;
+   background-color:orange;
    margin-top: 25px;
-   padding: 10px;
-   position: relative;
-   top: 25px;
+   margin-bottom: 10px;
+   padding: 10px 20px; 
+   border: none;
+   border-radius: 5px;
+   color: white;
+   font-weight: lighter;
 }
-#toggler:hover{
-   background-color: darkolivegreen;
+#togglePhotoBooth:hover{
+   background-color: rgba(255, 166, 0, 0.627);
 }
 #photobooth{
-   margin-left: 8%;
+   margin: 0 auto;
+   text-align: center;
    overflow: hidden;
 }
 #photobooth-enabled{
-   margin-left: 8%;
 }
 
 
@@ -208,25 +235,35 @@ img:hover{
 }
 
 #postcard{
-   margin-left: 10%;
+   margin-left: 17%;
 }
 #canvas2{
    background-image: url("https://live.staticflickr.com/65535/50556102128_f37bce0514_b.jpg");
    background-repeat: no-repeat;
    width: auto;
    height: 490px;
+   padding-top: 210px;
+   border: 5px solid silver;
 }
 
-.converter{
-   padding: 15px;
+#converter{
+  
+   margin: 0 auto;
+   margin-top: 10px;
+   margin-bottom: 10px;
+   text-align: center;
    background-color: orange;
    text-transform: uppercase;
    color: white;
    font-family: 'Montserrat', sans-serif;
-   margin-left: 200px;
+   padding: 10px 20px; 
+   border: none;
+   border-radius: 5px;
+   width:150px;
+   
 }
 
-.converter:hover{
+#converter:hover{
    background-color: rgba(255, 166, 0, 0.723);
    
 }

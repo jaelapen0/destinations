@@ -5,17 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./dist/main.css" />
-        <link rel="stylesheet" href="./src/styles/index.scss"/>
+    <link rel="stylesheet" href="./src/styles/index.scss"/>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <title>Destinations</title>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Load TensorFlow.js -->
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.13.3"></script>
     <!-- Load BodyPix -->
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/body-pix"></script>
-<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"> </script>
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"> </script>
+    
 
 </head>
 
@@ -24,6 +27,8 @@
     <nav>
     <ul></ul>
     <h1 class="header">DESTINATIONS</h1> 
+
+    <div>
         <ul class="about-nav">
             <h3 class="about">About</h3>
             <a href="https://github.com/jaelapen0/destinations/wiki"><img class="logo"
@@ -32,13 +37,13 @@
                     src="https://cdn2.iconfinder.com/data/icons/simple-social-media-shadow/512/14-512.png" alt=""></a>
             <!-- <img class="logo" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt=""> -->
         </ul>
-        
+    </div>
     </nav>
     <div class="main-content">
         <div class="side-panel">
             <!-- <div id="description"></div> -->
             <div class="list-of-cities">
-                <ul>  <p>CITIES</p> 
+                <ul>  <h2 class="cities">CITIES</h2> 
                     <li onclick={changeCity(this)} title="c2_u8UqG2c4">Atlanta</li>
                     <li onclick={changeCity(this)} title="6Wk8CtKYzOI">Boston</li>
                     <li onclick={changeCity(this)} title="3KrQUUifmFA">Chicago</li>
@@ -65,10 +70,9 @@
             <div id="vid">
                 WELCOME TO DESTINATIONS
             </div>
-            <div>
-                <button onclick={startCam()} id="togglePhotoBooth"> 
+            <div onclick={startCam(this)} id="togglePhotoBooth">
+                
                     START POST CARD BOOTH
-                </button>
             </div>
             <div  id='photobooth' hidden>
                 
@@ -77,8 +81,12 @@
                 <div id="download"></div>
                 <button hidden onclick={window.snap()}>click</button>
             </div>
+            
+            <div id="converter" onclick={makeCapture()} hidden> CAPTURE Postcard
+                <!-- <i class="fa fa-cog fa-spin" style="font-size:20px"></i> -->
+            </div>
             <div id="postcard" hidden>
-                <button class="converter" onclick={webweb()}> CAPTURE Postcard</button>
+                
                 <div id="ayo">
 
                     <canvas id="canvas2"></canvas>
@@ -90,8 +98,6 @@
             </div>
             <div id="description"></div>
         </div>
-
-
 
         <div id="imgs">FROM FLICKR
             <div class="photo-container"></div>
