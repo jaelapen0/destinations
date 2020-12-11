@@ -58,17 +58,28 @@ h2{
 }
 
 .cities{
-   margin: 15px auto;
-   text-align: center;
+   position: relative;
+
+   left: 60px;
 }
 
 .citiesList{
-   width: 300px;
-   box-shadow: 2px 2px 2px 2px gray ;
 }
 
 .citiesList li{
-   width: 300px;
+   color: silver;
+   border: none;
+   border-radius: 1px;
+}
+.citiesList li:hover{
+   color: white;
+   border-radius: 3px;
+   
+
+}
+
+.side-panel{
+   margin-left: 15px;
 }
 .main-content{
  display: flex;
@@ -138,10 +149,12 @@ li:hover{
    position: relative;
    top: 25px;
    border-radius: 5px;
+   background-image: linear-gradient(green,lightgreen);
+   font-weight: bold;
 }
 
 #toggler:hover{
-   background-color: darkolivegreen;
+  background: linear-gradient(#073,#0fa)
 
 }
 
@@ -194,7 +207,7 @@ img:hover{
    text-align: center;
    margin: 0 auto;
    width: 230px;
-   background-color:orange;
+   background-image:linear-gradient(rgb(212, 121, 10), orange);
    margin-top: 25px;
    margin-bottom: 10px;
    padding: 10px 20px; 
@@ -204,7 +217,7 @@ img:hover{
    font-weight: lighter;
 }
 #togglePhotoBooth:hover{
-   background-color: rgba(255, 166, 0, 0.627);
+   background-image:linear-gradient(rgb(215, 130, 26), rgb(244, 173, 41));
 }
 #photobooth{
    margin: 0 auto;
@@ -262,7 +275,7 @@ img:hover{
    margin-top: 10px;
    margin-bottom: 10px;
    text-align: center;
-   background-color: orange;
+   background-image:linear-gradient(rgb(212, 121, 10), orange);
    text-transform: uppercase;
    color: white;
    font-family: 'Montserrat', sans-serif;
@@ -274,20 +287,23 @@ img:hover{
 }
 
 #converter:hover{
-   background-color: rgba(255, 166, 0, 0.723);
+   background-image:linear-gradient(rgb(215, 130, 26), rgb(244, 173, 41))
    
 }
 
+.photo-container{
+}
 .photo-button{
    text-align: center;
    margin: 0 auto;
-   background-color: orange;
-   padding: 10px 10px;
-   border-radius: 5px;
+   background-image: linear-gradient(#263e3e, #385b5b);
+   padding: 5px 10px;
+   border-radius: 3px;
    width: 75px;
    border-bottom: 2px;
+   margin-top: 1px;
 }
 
 .photo-button:hover{
-   background-color: rgba(255, 166, 0, 0.723);
+   background-image: linear-gradient(#3c6565, #4c7d7d)
 }

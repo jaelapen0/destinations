@@ -38,21 +38,22 @@ export const startCam = (e)=> {
    debugger;
    // document.getElementById("photobooth").id = "photobooth-enabled";
    if (e.innerText.includes("START")){
-   toggleUseButton();
-   document.getElementById("photobooth").removeAttribute("hidden")
-   document.getElementById("webcam").id = "webcam-enabled"
-   document.getElementById("postcard").removeAttribute("hidden")
-   document.getElementById("converter").removeAttribute("hidden")
+   
+      webcam.start()
+         .then(result => {
+            console.log("webcam started");
+         })
+         .catch(err => {
+            alert(err);
+         });
 
-      e.innerText= ("STOP POST CARD BOOTH")
-   webcam.start()
-      .then(result => {
-         console.log("webcam started");
-      })
-      .catch(err => {
-         alert(err);
-      });
+      toggleUseButton();
+      document.getElementById("photobooth").removeAttribute("hidden")
+      document.getElementById("webcam").id = "webcam-enabled"
+      document.getElementById("postcard").removeAttribute("hidden")
+      document.getElementById("converter").removeAttribute("hidden")
 
+      e.innerText = ("STOP POST CARD BOOTH")
    }
    else{
       toggleUseButton();
@@ -66,15 +67,6 @@ export const startCam = (e)=> {
 } 
 
 
- export const snap = () =>{ 
-
-    let picture = webcam.snap();
-   //  document.querySelector('#canvas').href = picture;
-    debugger
-    let img= document.querySelector('#canvas').toDataURL("image/png")
-    document.getElementById("ayo").innerHTML = '<img id="ayo2" src="' + img + '"/>';
-    document.querySelector('#canvas').remove()
- }
 
 
 window.startCam = startCam;
@@ -110,8 +102,8 @@ const drawPerson = (segmentation) => {
    const canvasPerson = document.getElementById("canvas2");
    const contextPerson = canvasPerson.getContext('2d');
  
-   canvas.width = 480;
-      canvas.height = 640;
+   canvas.width = 640;
+      canvas.height = 480;
       let ctx = canvas.getContext('2d');
       ctx.drawImage(webcamElement, 0, 0);
       let imageData = ctx.getImageData(0, 0, webcamElement.width, webcamElement.height);
@@ -136,3 +128,12 @@ const drawPerson = (segmentation) => {
 }
 
 
+export const snap = () => {
+
+   let picture = webcam.snap();
+   //  document.querySelector('#canvas').href = picture;
+   debugger
+   let img = document.querySelector('#canvas').toDataURL("image/png")
+   document.getElementById("ayo").innerHTML = '<img id="ayo2" src="' + img + '"/>';
+   document.querySelector('#canvas').remove()
+}
