@@ -1,5 +1,5 @@
 // constcorsAttr = new EnableCorsAttribute("*", "*", "*");
- 
+ import {usePhotoButton} from "./util"
  export const fetchPhotos = (cityName) => {
    // debugger;
    let script = document.createElement('script');
@@ -57,9 +57,17 @@
    })
    // debugger;
    document.getElementById("imgs").innerHTML = image;
+    if (document.getElementById("photobooth").hidden)
     document.getElementsByClassName("photo-button").forEach(ele => {
       ele.setAttribute("hidden",true)
+
     })
+    else{
+       document.getElementsByClassName("photo-button").forEach(ele => {
+          ele.onclick = () => usePhotoButton(ele)
+          ele.innerHTML = "USE"
+       })
+    }
 }
 
 
