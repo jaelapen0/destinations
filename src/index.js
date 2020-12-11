@@ -1,7 +1,7 @@
 import "./styles/index.scss";
 import {fetchPhotos, jsonFlickrFeed, wikiAPI} from "./scripts/flickr_api.js"
 import {changeVideo} from "./scripts/video"
-import {toggleRead} from "./scripts/util"
+import {toggleRead, toggleUseButton, usePhotoButton} from "./scripts/util"
 // console.log("HI")
 import 'regenerator-runtime/runtime'
 import * as bodyPix from '@tensorflow-models/body-pix';
@@ -12,7 +12,8 @@ window.fetchPhotos = fetchPhotos;
 window.jsonFlickrFeed = jsonFlickrFeed;
 window.wikiAPI = wikiAPI;
 window.toggleRead = toggleRead;
-
+window.toggleUseButton = toggleRead;
+window.usePhotoButton = usePhotoButton;
 window.changeCity = (e) => {
    debugger;
     fetchPhotos(e.innerText)
@@ -37,6 +38,7 @@ export const startCam = (e)=> {
    debugger;
    // document.getElementById("photobooth").id = "photobooth-enabled";
    if (e.innerText.includes("START")){
+   toggleUseButton();
    document.getElementById("photobooth").removeAttribute("hidden")
    document.getElementById("webcam").id = "webcam-enabled"
    document.getElementById("postcard").removeAttribute("hidden")
@@ -53,6 +55,7 @@ export const startCam = (e)=> {
 
    }
    else{
+      toggleUseButton();
       document.getElementById("photobooth").setAttribute("hidden", true)
       document.getElementById("webcam-enabled").id = "webcam"
       document.getElementById("postcard").setAttribute("hidden", true)

@@ -46,10 +46,20 @@
       let url = photo.media.m
       let finalUrl = `${url.slice(0, url.length - 5)}b.jpg`
       // debugger;
-      image += `<a href=${finalUrl} target="_blank"> <div class="photo-container"> <img class="photo" src=\"${finalUrl}"\"/>  </div> </a>` ;
+      image +=
+               `<div class="photo-container"> 
+                      <a href = ${ finalUrl } target = "_blank"> 
+                        <img class="photo" src=\"${finalUrl}"\"/>  
+                     </a>
+                     <div class="photo-button"> </div>
+               </div>`
+      
    })
    // debugger;
    document.getElementById("imgs").innerHTML = image;
+    document.getElementsByClassName("photo-button").forEach(ele => {
+      ele.setAttribute("hidden",true)
+    })
 }
 
 
@@ -72,6 +82,4 @@ export const wikiAPI = location => {
       document.getElementById("description").innerHTML = Object.values(data.query.pages)[0].extract
      debugger;
    })
-   debugger;
-   document.querySelector('head').appendChild(script);
 }

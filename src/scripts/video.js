@@ -1,6 +1,5 @@
 
 export const changeVideo = url => {
-    // src="https://www.youtube.com/embed/c2_u8UqG2c4" 
    let vid = 
    `<iframe 
       width="736" height="414" 
