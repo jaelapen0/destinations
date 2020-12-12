@@ -15,7 +15,7 @@ window.toggleRead = toggleRead;
 window.toggleUseButton = toggleRead;
 window.usePhotoButton = usePhotoButton;
 window.changeCity = (e) => {
-   debugger;
+   // debugger;
     fetchPhotos(e.innerText)
     wikiAPI(e.innerText)
     changeVideo(e.title)
@@ -42,18 +42,19 @@ export const startCam = (e)=> {
       webcam.start()
          .then(result => {
             console.log("webcam started");
+            toggleUseButton();
+            document.getElementById("photobooth").removeAttribute("hidden")
+            document.getElementById("webcam").id = "webcam-enabled"
+            document.getElementById("postcard").removeAttribute("hidden")
+            document.getElementById("converter").removeAttribute("hidden")
+
+            e.innerText = ("STOP POST CARD BOOTH")
          })
          .catch(err => {
             alert(err);
          });
 
-      toggleUseButton();
-      document.getElementById("photobooth").removeAttribute("hidden")
-      document.getElementById("webcam").id = "webcam-enabled"
-      document.getElementById("postcard").removeAttribute("hidden")
-      document.getElementById("converter").removeAttribute("hidden")
-
-      e.innerText = ("STOP POST CARD BOOTH")
+     
    }
    else{
       toggleUseButton();
@@ -73,7 +74,7 @@ window.startCam = startCam;
 window.snap = snap;
 window.makeCapture = makeCapture;;
 
-async function makeCapture() {
+export async function makeCapture() {
    document.getElementById("converter").innerHTML = 
    `Loading <i class="fa fa-cog fa-spin" style="font-size:20px"></i>`
    const imageElement = document.getElementById('ayo2');
@@ -83,7 +84,7 @@ async function makeCapture() {
 
    net.segmentPerson(webcamElement, {
       flipHorizontal: true,
-      internalResolution: 'medium',
+      internalResolution: 'full',
       segmentationThreshold: 0.7
    })
       .then(personSegmentation => {
@@ -97,33 +98,33 @@ async function makeCapture() {
 }
 
 
-const drawPerson = (segmentation) => {
+export const drawPerson = (segmentation) => {
    const canvas = document.getElementById('canvas2');
    const canvasPerson = document.getElementById("canvas2");
-   const contextPerson = canvasPerson.getContext('2d');
+   const ctxPerson = canvasPerson.getContext('2d');
  
    canvas.width = 640;
-      canvas.height = 480;
-      let ctx = canvas.getContext('2d');
-      ctx.drawImage(webcamElement, 0, 0);
-      let imageData = ctx.getImageData(0, 0, webcamElement.width, webcamElement.height);
+   canvas.height = 480;
+   let ctx = canvas.getContext('2d');
+   ctx.drawImage(webcamElement, 0, 0);
+   let imageData = ctx.getImageData(0, 0, webcamElement.width, webcamElement.height);
 
-      let pixel = imageData.data;
-      for (let p = 0; p < pixel.length; p += 4) {
-         if (segmentation.data[p / 4] == 0) {
-            pixel[p + 3] = 0;
-         }
+   let pixel = imageData.data;
+   for (let p = 0; p < pixel.length; p += 4) {
+      if (segmentation.data[p / 4] == 0) {
+         pixel[p + 3] = 0;
       }
-      ctx.imageSmoothingEnabled = true;
-      ctx.putImageData(imageData, 0, 0);
+   }
+   ctx.imageSmoothingEnabled = true;
+   ctx.putImageData(imageData, 0, 0);
 
-      let imageObject = new Image();
-      imageObject.onload = function () {
-         contextPerson.clearRect(0, 0, canvasPerson.width, canvasPerson.height);
-         contextPerson.imageSmoothingEnabled = true;
-         contextPerson.drawImage(imageObject, 0, 0, canvasPerson.width, canvasPerson.height);
-      }
-      imageObject.src = canvas.toDataURL();
+   let imgObject = new Image();
+   imgObject.onload = () => {
+      ctxPerson.clearRect(0, 0, canvasPerson.width, canvasPerson.height);
+      ctxPerson.imageSmoothingEnabled = true;
+      ctxPerson.drawImage(imgObject, 0, 0, canvasPerson.width, canvasPerson.height);
+   }
+   imgObject.src = canvas.toDataURL();
 
 }
 

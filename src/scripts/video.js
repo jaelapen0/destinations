@@ -8,6 +8,8 @@ export const changeVideo = url => {
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
       allowfullscreen>
    </iframe>`
-   debugger
+   // debugger
    document.getElementById("vid").innerHTML = vid;
 }
+
+
