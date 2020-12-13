@@ -58,28 +58,17 @@ h2{
 }
 
 .cities{
-   position: relative;
-
-   left: 60px;
+   margin: 15px auto;
+   text-align: center;
 }
 
 .citiesList{
+   width: 300px;
+   box-shadow: 2px 2px 2px 2px gray ;
 }
 
 .citiesList li{
-   color: silver;
-   border: none;
-   border-radius: 1px;
-}
-.citiesList li:hover{
-   color: white;
-   border-radius: 3px;
-   
-
-}
-
-.side-panel{
-   margin-left: 15px;
+   width: 300px;
 }
 .main-content{
  display: flex;
@@ -149,12 +138,10 @@ li:hover{
    position: relative;
    top: 25px;
    border-radius: 5px;
-   background-image: linear-gradient(green,lightgreen);
-   font-weight: bold;
 }
 
 #toggler:hover{
-  background: linear-gradient(#073,#0fa)
+   background-color: darkolivegreen;
 
 }
 
@@ -207,7 +194,7 @@ img:hover{
    text-align: center;
    margin: 0 auto;
    width: 230px;
-   background-image:linear-gradient(rgb(212, 121, 10), orange);
+   background-color:orange;
    margin-top: 25px;
    margin-bottom: 10px;
    padding: 10px 20px; 
@@ -217,7 +204,7 @@ img:hover{
    font-weight: lighter;
 }
 #togglePhotoBooth:hover{
-   background-image:linear-gradient(rgb(215, 130, 26), rgb(244, 173, 41));
+   background-color: rgba(255, 166, 0, 0.627);
 }
 #photobooth{
    margin: 0 auto;
@@ -248,12 +235,12 @@ img:hover{
    width: 700px;
 }
 #ayo{
-   width: 600px;
+ 
    height: 450px;
    overflow: hidden;
    text-align: center;
    margin: 0 auto;
-   background-image: url("https://live.staticflickr.com/65535/50497906032_bd90f75fec_b.jpg");
+   background-image: url("https://live.staticflickr.com/65535/50547011076_ebdba8ee15_b.jpg");
    background-repeat: no-repeat;
    background-size: 120%;
    border: 5px solid goldenrod;
@@ -275,7 +262,7 @@ img:hover{
    margin-top: 10px;
    margin-bottom: 10px;
    text-align: center;
-   background-image:linear-gradient(rgb(212, 121, 10), orange);
+   background-color:orange;
    text-transform: uppercase;
    color: white;
    font-family: 'Montserrat', sans-serif;
@@ -287,23 +274,42 @@ img:hover{
 }
 
 #converter:hover{
-   background-image:linear-gradient(rgb(215, 130, 26), rgb(244, 173, 41))
+   background-color: rgba(255, 166, 0, 0.757);
    
 }
 
-.photo-container{
+#download{
+  
+   margin: 0 auto;
+   margin-top: 10px;
+   margin-bottom: 10px;
+   text-align: center;
+   background-color: orange;
+   text-transform: uppercase;
+   color: white;
+   font-family: 'Montserrat', sans-serif;
+   padding: 10px 20px; 
+   border: none;
+   border-radius: 5px;
+   width:150px;
+   
 }
+
+#download:hover{
+   background-color: rgba(255, 166, 0, 0.723);
+   
+}
+
 .photo-button{
    text-align: center;
    margin: 0 auto;
-   background-image: linear-gradient(#263e3e, #385b5b);
-   padding: 5px 10px;
+   background-image: linear-gradient(rgb(20, 113, 110), rgb(23, 150, 146));
+   padding: 10px 5px;
    border-radius: 3px;
    width: 75px;
    border-bottom: 2px;
-   margin-top: 1px;
 }
 
 .photo-button:hover{
-   background-image: linear-gradient(#3c6565, #4c7d7d)
+   background-image: linear-gradient(rgb(16, 142, 138), rgb(2, 168, 162));
 }

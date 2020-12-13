@@ -6,7 +6,7 @@ import {toggleRead, toggleUseButton, usePhotoButton} from "./scripts/util"
 import 'regenerator-runtime/runtime'
 import * as bodyPix from '@tensorflow-models/body-pix';
 import Webcam from 'webcam-easy';
-
+import {toBlob, toJpeg} from 'dom-to-image'
 
 window.fetchPhotos = fetchPhotos;
 window.jsonFlickrFeed = jsonFlickrFeed;
@@ -73,7 +73,7 @@ export const startCam = (e)=> {
 window.startCam = startCam;
 window.snap = snap;
 window.makeCapture = makeCapture;;
-
+// window.createScreenShot = createScreenShot;
 export async function makeCapture() {
    document.getElementById("converter").innerHTML = 
    `Loading <i class="fa fa-cog fa-spin" style="font-size:20px"></i>`
@@ -125,7 +125,7 @@ export const drawPerson = (segmentation) => {
       ctxPerson.drawImage(imgObject, 0, 0, canvasPerson.width, canvasPerson.height);
    }
    imgObject.src = canvas.toDataURL();
-
+   document.getElementById("download").removeAttribute("hidden")
 }
 
 
@@ -138,3 +138,23 @@ export const snap = () => {
    document.getElementById("ayo").innerHTML = '<img id="ayo2" src="' + img + '"/>';
    document.querySelector('#canvas').remove()
 }
+
+// window.saveAs  = saveAs;
+// window.toBlob = toBlob;
+
+
+const takeScreenShot = () => {
+   toJpeg(document.getElementById('ayo'), { quality: 0.95 })
+      .then(function (dataUrl) {
+         var link = document.createElement('a');
+         link.download = 'my-postcard';
+         link.href = dataUrl;
+         link.click();
+        
+      });
+}
+
+
+
+
+window.takeScreenShot = takeScreenShot;

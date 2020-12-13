@@ -15,8 +15,8 @@
     <!-- Load TensorFlow.js -->
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.13.3"></script>
     <!-- Load BodyPix -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/body-pix"></script> -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"> </script> -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/body-pix"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"> </script>
     
 
 </head>
@@ -42,7 +42,7 @@
         <div class="side-panel">
             <!-- <div id="description"></div> -->
             <div class="list-of-cities">
-                <ul class="citiesList">  <h2 class="cities">CITIES</h2> 
+                <ul>  <h2 class="cities">CITIES</h2> 
                     <li onclick={changeCity(this)} title="c2_u8UqG2c4">Atlanta</li>
                     <li onclick={changeCity(this)} title="6Wk8CtKYzOI">Boston</li>
                     <li onclick={changeCity(this)} title="3KrQUUifmFA">Chicago</li>
@@ -76,19 +76,20 @@
             <div  id='photobooth' hidden>
                 
                 <video id="webcam" autoplay playsinline width="640" height="480"></video>
-                <audio id="snapSound" src="audio/snap.wav" preload="auto"></audio>
-                <div id="download"></div>
+                <!-- <audio id="snapSound" src="audio/snap.wav" preload="auto"></audio>
+                <div id="download"></div> -->
                 <button hidden onclick={window.snap()}>click</button>
             </div>
             
             <div id="converter" onclick={makeCapture()} hidden> CAPTURE Postcard
                 <!-- <i class="fa fa-cog fa-spin" style="font-size:20px"></i> -->
             </div>
+            <div id="download" onclick={takeScreenShot()} hidden>Download PostCard </div>
             <div id="postcard" hidden>
                 
                 <div id="ayo">
 
-                    <canvas id="canvas2"></canvas>
+                    <canvas id="canvas2" onclick={takeScreenShot()}></canvas>
                 </div>
             </div>
             <div id= "toggler" 

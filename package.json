@@ -18,7 +18,15 @@
   "license": "ISC",
   "dependencies": {
     "@tensorflow-models/body-pix": "^2.0.5",
-    "html2canvas": "^1.0.0-rc.7"
+    "@tensorflow/tfjs-converter": "^2.7.0",
+    "@tensorflow/tfjs-core": "^2.7.0",
+    "a": "^2.1.2",
+    "dom-to-image": "^2.6.0",
+    "html2canvas": "^1.0.0-rc.7",
+    "of": "^1.0.0",
+    "peer": "^0.6.1",
+    "requires": "^1.0.2",
+    "webcam-easy": "^1.0.5"
   },
   "devDependencies": {
     "@babel/core": "^7.11.6",
