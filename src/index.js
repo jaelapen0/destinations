@@ -72,6 +72,7 @@ export const startCam = (e)=> {
 
 
 
+
 window.startCam = startCam;
 window.snap = snap;
 window.makeCapture = makeCapture;;
