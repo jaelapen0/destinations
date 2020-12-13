@@ -8,16 +8,16 @@ export const toggleRead = () => {
       document.getElementById("description2").id = "description"
    document.getElementById("toggler").innerHTML = "READ MORE"
    }
-   debugger;
+   // debugger;
 }
 
 export const toggleUseButton = () => {
    let booth = document.getElementById("photobooth")
-   debugger;
+   // debugger;
    if (booth.hidden === true){
-      debugger;
+      // debugger;
       document.getElementsByClassName("photo-button").forEach(ele => {
-         debugger;
+         // debugger;
          ele.removeAttribute("hidden")
           ele.innerHTML = "USE"
          // ele.setAttribute("onclick", function clickkity(){document.getElementById("ayo").style.backgroundImage = ele.previousElementSibling.href});
@@ -39,7 +39,7 @@ export const toggleUseButton = () => {
 
 export const usePhotoButton = (e) => {
 
-   debugger;
+   // debugger;
 // e.setAttribute("onclick", function clickkity(){
    document.getElementById("ayo").style.backgroundImage = `url(${e.previousElementSibling.href}`
    //  document.getElementById("ayo").style.backgroundImage = "https://live.staticflickr.com/65535/50556102128_f37bce0514_b.jpg"

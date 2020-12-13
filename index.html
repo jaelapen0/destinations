@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./dist/main.css" />
+<<<<<<< HEAD
     <!-- <link rel="stylesheet" href="./src/styles/index.scss"/> -->
+=======
+>>>>>>> gh-pages
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -43,7 +46,7 @@
         <div class="side-panel">
             <!-- <div id="description"></div> -->
             <div class="list-of-cities">
-                <ul class="citiesList">  <h2 class="cities">CITIES</h2> 
+                <ul>  <h2 class="cities">CITIES</h2> 
                     <li onclick={changeCity(this)} title="c2_u8UqG2c4">Atlanta</li>
                     <li onclick={changeCity(this)} title="6Wk8CtKYzOI">Boston</li>
                     <li onclick={changeCity(this)} title="3KrQUUifmFA">Chicago</li>
@@ -84,11 +87,12 @@
             <div id="converter" onclick={makeCapture()} hidden> CAPTURE Postcard
                 <!-- <i class="fa fa-cog fa-spin" style="font-size:20px"></i> -->
             </div>
+            <div id="download" onclick={takeScreenShot()} hidden>Download PostCard </div>
             <div id="postcard" hidden>
                 
                 <div id="ayo">
 
-                    <canvas id="canvas2"></canvas>
+                    <canvas id="canvas2" onclick={takeScreenShot()}></canvas>
                 </div>
             </div>
             <div id= "toggler" 

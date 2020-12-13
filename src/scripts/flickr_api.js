@@ -9,7 +9,7 @@
    document.querySelector('head').appendChild(script);
 }
  export const jsonFlickrFeed = data => {
-   debugger;
+   // debugger;
     if (data.title.includes("boston"))
        data.items = data.items.slice(6, 15);
    if (data.title.includes("chicago"))
@@ -87,7 +87,13 @@ export const wikiAPI = location => {
    }).then(data => {
       debugger;
 
-      document.getElementById("description").innerHTML = Object.values(data.query.pages)[0].extract
-     debugger;
+     if (document.getElementById("description") !== null){
+        debugger
+         document.getElementById("description").innerHTML = Object.values(data.query.pages)[0].extract
+     }
+     else if (document.getElementById("description2") !== null){
+         document.getElementById("description2").innerHTML =Object.values(data.query.pages)[0].extract
+         debugger;
+      }
    })
 }
