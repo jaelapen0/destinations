@@ -132,7 +132,7 @@ li:hover{
    text-align: center;
    margin: 0 auto;
    width: 150px;
-   background-color: rgb(133, 171, 68);
+   background-image: linear-gradient(green, lightgreen);
    margin-top: 25px;
    padding: 10px;
    position: relative;
@@ -141,7 +141,7 @@ li:hover{
 }
 
 #toggler:hover{
-   background-color: darkolivegreen;
+   background-image: linear-gradient(rgb(13, 159, 13), rgb(173, 231, 173));
 
 }
 
