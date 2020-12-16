@@ -37,8 +37,7 @@
    if (data.title.includes("toronto"))
       data.items = data.items.slice(11, 17);
    // debugger;
-
-
+//
 
    let image = "<h3>FLICKR FEED</h3>";
    data.items.forEach((photo) => {
