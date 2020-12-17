@@ -64,8 +64,11 @@ export const startCam = (e)=> {
       document.getElementById("converter").setAttribute("hidden", true)
       e.innerText = ("START POST CARD BOOTH")
       webcam.stop()
+      document.getElementById("download").setAttribute("hidden", true)
    }
 } 
+
+
 
 
 
@@ -156,5 +159,5 @@ const takeScreenShot = () => {
 
 
 
-
+//
 window.takeScreenShot = takeScreenShot;

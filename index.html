@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
 
     <title>Destinations</title>
 
@@ -29,7 +30,8 @@
 
     <div>
         <ul class="about-nav">
-            <h3 class="about">About</h3>
+            <h3 class="about" onclick="document.getElementById('modal').style.display='block'"
+            class="w3-button" >About</h3>
             <a href="https://github.com/jaelapen0/destinations/wiki"><img class="logo"
                     src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt=""></a>
             <a href="https://www.linkedin.com/in/jae-song-58771b82/"><img class="logo1"
@@ -39,6 +41,7 @@
     </div>
     </nav>
     <div class="main-content">
+        <div id="modal"></div>
         <div class="side-panel">
             <!-- <div id="description"></div> -->
             <div class="list-of-cities">

@@ -11,5 +11,4 @@ export const changeVideo = url => {
    // debugger
    document.getElementById("vid").innerHTML = vid;
 }
-
-
+//
