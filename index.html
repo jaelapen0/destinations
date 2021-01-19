@@ -30,8 +30,8 @@
 
     <div>
         <ul class="about-nav">
-            <h3 class="about" onclick="document.getElementById('modal').style.display='block'"
-            class="w3-button" >About</h3>
+            <h3 class="about">
+                <a class="btn" href="#open-modal">About</a></h3>
             <a href="https://github.com/jaelapen0/destinations/wiki"><img class="logo"
                     src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt=""></a>
             <a href="https://www.linkedin.com/in/jae-song-58771b82/"><img class="logo1"
@@ -39,9 +39,11 @@
             <!-- <img class="logo" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt=""> -->
         </ul>
     </div>
+
+    
     </nav>
     <div class="main-content">
-        <div id="modal"></div>
+        <div id="modal" ></div>
         <div class="side-panel">
             <!-- <div id="description"></div> -->
             <div class="list-of-cities">
@@ -105,6 +107,30 @@
             <div class="photo-container"></div>
         </div>
         
+    </div>
+    <div id="open-modal" class="modal-window">
+        <div class="modalaye">
+            <a href="#" title="Close" class="modal-close">Close</a>
+            <h1>Destinations</h1>
+            <div>Do you love skylines? I sure do. I am really big into skyscrapers and architecture.</div>
+
+            <div>Checkout the photobooth - It uses your webcam to take photos so don't be shy :).
+                 It cuts out the background, and then you can pick any photo from the FLICKR Feed to use as the background.
+                 Theres a download option as well! 
+            </div>
+            <div>The videos showcased are from the Youtube channel I operate:   
+                <a class="modalurl" href="https://youtube.com/themindofjae">  The Mind of Jae</a>
+            </div>
+            <div>This site was built using HTML, CSS, vanilla javascript. 
+                <br>
+                I used TensorFlow's BodyPix, and Webcam-Easy libraries.
+                <br>
+                Additionally I used Wikipedia and Flickr API's.
+            </div>
+
+            <div>Thanks for stopping by! - Jae</div>
+        </div>
+    </div>
     </div>
     <script src="./dist/main.js"></script>
 </body>

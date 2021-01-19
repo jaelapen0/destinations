@@ -104,6 +104,7 @@ li{
 li:hover{
    background-color: darkgray;
    justify-content: center;
+   cursor: pointer;
 }
 .middle-content{
  margin-top: 55px;
@@ -142,7 +143,7 @@ li:hover{
 
 #toggler:hover{
    background-image: linear-gradient(rgb(13, 159, 13), rgb(173, 231, 173));
-
+   cursor: pointer;
 }
 
 
@@ -206,6 +207,8 @@ img:hover{
 }
 #togglePhotoBooth:hover{
    background-color: rgba(255, 166, 0, 0.627);
+   cursor: pointer;
+
 }
 #photobooth{
    margin: 0 auto;
@@ -276,6 +279,7 @@ img:hover{
 
 #converter:hover{
    background-color: rgba(255, 166, 0, 0.757);
+   cursor: pointer;
    
 }
 
@@ -298,6 +302,8 @@ img:hover{
 
 #download:hover{
    background-color: rgba(255, 166, 0, 0.723);
+   cursor: pointer;
+
    
 }
 
@@ -313,4 +319,94 @@ img:hover{
 
 .photo-button:hover{
    background-image: linear-gradient(rgb(16, 142, 138), rgb(2, 168, 162));
+   cursor: pointer;
+
+}
+
+a {
+   text-decoration: none;
+   color: white;
+}
+
+
+.modal-window {
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.086);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+  &:target {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  &>div {
+    width: 450px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2em;
+    background: #ffffff;
+  }
+  header {
+    font-weight: bold;
+  }
+  h1 {
+    font-size: 150%;
+    margin: 0 0 15px;
+  }
+}
+
+.modal-close {
+  color: black;
+  line-height: 50px;
+  font-size: 80%;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 70px;
+  text-decoration: none;
+  &:hover {
+    color: black;
+  }
+}
+
+/* Demo Styles */
+
+.container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.modal-window div:not(:last-of-type) {
+  margin-bottom: 15px;
+}
+
+small {
+  color: #aaa;
+}
+
+
+
+.modalaye{
+   color: black;
+}
+
+.modalurl{
+   color: orange;
+   text-decoration: underline;
+}
+.modalurl:hover{
+   color: lime;
+   text-decoration: underline;
 }
