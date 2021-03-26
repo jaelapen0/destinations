@@ -17,9 +17,10 @@
   "author": "jae",
   "license": "ISC",
   "dependencies": {
-    "@tensorflow-models/body-pix": "^2.0.5",
+    "@tensorflow-models/body-pix": "^2.1.0",
+    "@tensorflow/tfjs-backend-webgl": "^3.3.0",
     "@tensorflow/tfjs-converter": "^2.7.0",
-    "@tensorflow/tfjs-core": "^2.7.0",
+    "@tensorflow/tfjs-core": "^2.8.6",
     "a": "^2.1.2",
     "dom-to-image": "^2.6.0",
     "html2canvas": "^1.0.0-rc.7",
@@ -47,6 +48,7 @@
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0",
-    "webpack-merge": "^4.2.2"
+    "webpack-merge": "^4.2.2",
+    "source-map-loader": "^1.0.0"
   }
 }
